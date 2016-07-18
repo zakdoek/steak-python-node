@@ -6,4 +6,5 @@ RUN apt-get update
 RUN apt-get install -y curl apt-utils
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python python-dev imagemagick build-essential nodejs
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python python-pip python-dev imagemagick build-essential nodejs
+RUN pip install -I pip
