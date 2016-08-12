@@ -8,4 +8,7 @@ RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y python python-pip python-dev imagemagick build-essential nodejs git libpq-dev libffi-dev moreutils && \
-    pip install -I pip
+    pip install -I pip && \
+    apt-get autoclean && \
+    apt-get autoremove && \
+    apt-get purge
