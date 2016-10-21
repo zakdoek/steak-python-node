@@ -7,7 +7,12 @@ RUN apt-get upgrade -y
 RUN apt-get install -y curl apt-utils
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3 python3-pip python3-dev imagemagick build-essential nodejs git libpq-dev libffi-dev moreutils gettext
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3 python3-pip \
+    python3-dev python3-setuptools imagemagick build-essential nodejs git \
+    libpq-dev libffi-dev moreutils gettext
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libtiff5-dev \
+    libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev \
+    tcl8.6-dev tk8.6-dev python-tk
 RUN pip3 install -I pip
 RUN apt-get autoclean
 RUN apt-get autoremove
